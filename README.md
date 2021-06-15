@@ -1,6 +1,6 @@
 # dhee-online-transcription-api-js
 
-The JavaScript library to perform online transcription of spoken audio using models deployed at Dhee.AI cloud.
+The JavaScript library to perform online transcription of spoken audio by connecting to speech recognition service at Dhee.AI cloud.
 
 
 Download the JS file [dhee-transcription-api.js](https://raw.githubusercontent.com/DheeYantra/dhee-online-transcription-api-js/dhee-transcription-api.js)  and include it in your page's scripts.
