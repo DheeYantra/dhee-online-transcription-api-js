@@ -8,36 +8,36 @@ Download the JS file [dhee-transcription-api.js](https://raw.githubusercontent.c
 An example usage is as below:
 ```javascript
 
-    var transcriptionTarget = document.getElementById("transcript");
-		var micButton = document.getElementById("mic");
-		var selectedLanguage = document.getElementById("language").value;
+	var transcriptionTarget = document.getElementById("transcript");
+	var micButton = document.getElementById("mic");
+	var selectedLanguage = document.getElementById("language").value;
 		
-    var config = {
+	var config = {
 			apiKey:"[YOUR DHEE API KEY]",
 			apiSecret: "[YOUR DHEE API SECRET FOR ABOVE KEY]",
 			language: selectedLanguage,
 			targetContainer: transcriptionTarget,
 			micButton : micButton,
 			callParams : {}
-		}
+	}
 		
-    var transcriptionApi = new DheeTranscriptionApi(config);
+    	var transcriptionApi = new DheeTranscriptionApi(config);
     
-    transcriptionApi.setEventHandler("startRecording", function() {
-			micButton.style.color = "red";
-		});
+    	transcriptionApi.setEventHandler("startRecording", function() {
+		micButton.style.color = "red";
+	});
     
-		transcriptionApi.setEventHandler("stopRecording", function() {
-			micButton.style.color = "gold";
-		});
+	transcriptionApi.setEventHandler("stopRecording", function() {
+		micButton.style.color = "gold";
+	});
     
-		micButton.onclick = function() {
-			if (transcriptionApi.isListening()) {
-				transcriptionApi.stop();
-			} else {
-				transcriptionApi.start();
-			}
+	micButton.onclick = function() {
+		if (transcriptionApi.isListening()) {
+			transcriptionApi.stop();
+		} else {
+			transcriptionApi.start();
 		}
+	}
 
 ```
 
