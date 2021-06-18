@@ -11,6 +11,8 @@ function DheeTranscriptionApi (config) {
     this.callParams = config.callParams;
 
     this.textBuffer = "\n";
+    var socket = null;
+    var audioContext;
 
     
     
@@ -89,7 +91,6 @@ function DheeTranscriptionApi (config) {
     this.initializeSpeechRecognition  = function (sessionKey) {
         var dheeTranscriptionApi = this;
         this.sessionKey = sessionKey;
-        var audioContext;
         var microphoneStreamSource;
 
         function newWebsocket(transcriptionKey) {
@@ -120,7 +121,7 @@ function DheeTranscriptionApi (config) {
             Promise.all([audioPromise, websocketPromise]).then(function (values) {
 
                 var micStream = values[0];
-                var socket = values[1].target;
+                socket = values[1].target;
 
                 audioContext = new (window.AudioContext || window.webkitAudioContext)(/*{ sampleRate: 16000 }*/);
 
