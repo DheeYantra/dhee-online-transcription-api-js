@@ -1,8 +1,8 @@
 function DheeTranscriptionApi (config) {
     const SAMPLE_RATE = 16000;
     const SAMPLE_SIZE = 16;
-    var MY_SERVER = 'runtime.dhee.ai';
-
+    
+    this.MY_SERVER = 'runtime.dhee.ai';
     this.apiKey = config.apiKey;
     this.apiSecret = config.apiSecret;
     this.language = config.language;
@@ -53,7 +53,7 @@ function DheeTranscriptionApi (config) {
 
         var dheeTranscriptionApi = this;
 
-        var sessionCreationUrl = 'https://' + MY_SERVER + '/web/get-transcription-channel';
+        var sessionCreationUrl = 'https://' + this.MY_SERVER + '/web/get-transcription-channel';
         
         var config = {
             apiKey: this.apiKey,
@@ -106,7 +106,7 @@ function DheeTranscriptionApi (config) {
 
             var websocketPromise = new Promise(function (resolve, reject) {
 
-                var callConnectionUrl = 'wss://' + MY_SERVER + "/voice-transcription/";
+                var callConnectionUrl = 'wss://' + dheeTranscriptionApi.MY_SERVER + "/voice-transcription/";
 
                 socket = new WebSocket(callConnectionUrl + transcriptionKey);
                 socket.binaryType = "arraybuffer";
