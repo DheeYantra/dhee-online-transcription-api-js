@@ -150,7 +150,9 @@ function DheeTranscriptionApi (config) {
                 }
 
                 websocketProcessorScriptNode.addEventListener('audioprocess', function (e) {
-
+                    if (audioContext == null) {
+                        return;
+                    }
                     var floatSamples = e.inputBuffer.getChannelData(0);
                     var fromSampleRate = audioContext.sampleRate;
                     var toSampleRate = 16000;
