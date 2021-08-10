@@ -244,7 +244,7 @@ function DheeTranscriptionApi (config) {
                 }
                 if (audioContext && audioContext.state != 'closed') {
                     audioContext.close();
-                    delete audioContext;
+                    audioContext = null;
                 }
 
             } catch (error) {
