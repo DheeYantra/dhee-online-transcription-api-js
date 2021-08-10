@@ -1,7 +1,7 @@
 function DheeTranscriptionApi (config) {
     const SAMPLE_RATE = 16000;
     const SAMPLE_SIZE = 16;
-    const MY_SERVER = 'dev-runtime.dhee.net.in';
+    var MY_SERVER = 'runtime.dhee.ai';
 
     this.apiKey = config.apiKey;
     this.apiSecret = config.apiSecret;
