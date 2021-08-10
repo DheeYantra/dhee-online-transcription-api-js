@@ -14,10 +14,6 @@ function DheeTranscriptionApi (config) {
     var socket = null;
     var audioContext;
 
-    
-    
-    var sessionCreationUrl = 'https://' + MY_SERVER + '/web/get-transcription-channel';
-
     this.onError = function (error) {
         console.log("Error.")
     }
@@ -56,6 +52,8 @@ function DheeTranscriptionApi (config) {
     this.initiateSession = function () {
 
         var dheeTranscriptionApi = this;
+
+        var sessionCreationUrl = 'https://' + MY_SERVER + '/web/get-transcription-channel';
         
         var config = {
             apiKey: this.apiKey,
