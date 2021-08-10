@@ -204,12 +204,12 @@ function DheeTranscriptionApi (config) {
                         } else {
                             var packet = JSON.parse(message.data);
                             if (packet.status == 0) {
-                                dheeTranscriptionApi.targetContainer.innerHTML = dheeTranscriptionApi.textBuffer + packet.transcript;
+                                dheeTranscriptionApi.targetContainer.value = dheeTranscriptionApi.textBuffer + packet.transcript;
                             }
 
                             if (packet.status == 1) {
                                 dheeTranscriptionApi.textBuffer = dheeTranscriptionApi.textBuffer + packet.transcript + "\n";
-                                dheeTranscriptionApi.targetContainer.innerHTML = dheeTranscriptionApi.textBuffer;
+                                dheeTranscriptionApi.targetContainer.value = dheeTranscriptionApi.textBuffer;
                             }
                         }
                         return;
